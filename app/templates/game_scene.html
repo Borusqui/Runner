@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Game Scene {{ scene_id }}{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1>Game Scene {{ scene_id }}</h1>
+    <p>{{ scene_description }}</p>
+
+    {% if scene_input %}
+    <form action="/submit_input/{{ scene_id }}" method="POST">
+        <label for="user_input">Enter {{ scene_input }}:</label>
+        <input type="text" id="user_input" name="user_input" class="user-input">
+        <button type="submit" class="layout-button">Submit</button>
+    </form>
+    {% endif %}
+
+    <form action="/choose_option/{{ scene_id }}" method="POST">
+        {% for option in options %}
+        <button type="submit" name="option_id" value="{{ option.id }}" class="layout-button">{{ option.text }}</button>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}
