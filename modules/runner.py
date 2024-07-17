@@ -83,17 +83,14 @@ class Runner:
             else:
                 print(f"{self.name}'s is currently not fatigued.")
     
-    def enter_race(self, track, base_time, variability):
-        """Registers the runner for a race on a given track."""
-        finish_time = self.generate_finish_time(base_time, variability)
-        track.add_participant(self, base_time, variability)        
+    def train_fitness(self):
+        print("Training fitness...")
+        # self.fatigue += x
+        # self.fitness += y
 
-    def train(self):
-        print("Training...")
-
-
-    def study(self):
-        print("Studying...")
+    def train_knowledge(self):
+        print("Training Knowledge...")
+        # self.knowledge += x
 
     def rest(self):
         print("Resting...")
