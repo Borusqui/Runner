@@ -14,6 +14,7 @@ class Runner:
         self.current_injury = None
         self.personal_records = {}
         self.fatigue = 0
+        self.gold = 0
 
     @classmethod
     def generate_runners(cls, track_category, num_runners):
@@ -94,3 +95,5 @@ class Runner:
 
     def rest(self):
         print("Resting...")
+        # self.recovery += y
+        # self.fatigue -= x
